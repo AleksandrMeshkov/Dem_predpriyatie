@@ -23,13 +23,15 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
 
-                        <StackPanel Orientation="Vertical">
-                            <!--для того чтоб расположить элементы вертикально-->
-                            <TextBlock Grid.Column="1" Text="{Binding Name, StringFormat='Материал: {0}'}" Margin="5"/>
-                            <TextBlock Grid.Column="2" Text="{Binding Measurement.Name, StringFormat='Ед. изм. : {0}'}" Margin="5"/>
-                            <TextBlock Grid.Column="3" Text="{Binding Quantity, StringFormat='Остаток: {0}'}" Margin="5"/>
+                        <StackPanel Orientation="Vertical" Grid.Column="1">
+                            <TextBlock Text="{Binding Date, StringFormat='Дата: {0}'}" Margin="5"/>
+                            <TextBlock Text="{Binding Price, StringFormat='Цена: {0}'}" Margin="5"/>
+                            <TextBlock Text="{Binding Quantity, StringFormat='Количество: {0}'}" Margin="5"/>
+                            <TextBlock Text="{Binding MaterialName, StringFormat='Материал: {0}'}" Margin="5"/>
+                            <TextBlock Text="{Binding Remains, StringFormat='Остаток на складе: {0}'}" Margin="5"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>

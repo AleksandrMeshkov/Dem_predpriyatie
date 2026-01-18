@@ -38,7 +38,7 @@ namespace Dem_predpriyatie
 
         private void PostBtn(object sender, RoutedEventArgs e)
         {
-
+            MainFrame.Navigate(new Post_materials());
         }
     }
 }

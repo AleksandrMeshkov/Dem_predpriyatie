@@ -1,6 +1,7 @@
 ﻿using Dem_predpriyatie.Service.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,18 +27,47 @@ namespace Dem_predpriyatie.Pages_list
         public Post_materials()
         {
             InitializeComponent();
+            load_post();
         }
 
         private void load_post()
         {
-            var postcard = context.Purchase
-                .Select(p => new
-                {
-                    p.Date,
-                    p.Price,
-                    p.Quantity,
+            var purchases = context.Purchase
+                .Include("Warehouse.Specification.Recipe.Materials")
+                .ToList();
 
-                }).ToList();
+            var displayModels = purchases.Select(p =>
+            {
+                var specs = (p.Warehouse ?? Enumerable.Empty<Warehouse>())
+                    .SelectMany(w => w.Specification ?? Enumerable.Empty<Specification>());
+
+                var orderedSpecs = specs.OrderBy(s => s.Specification_id).ToList();
+                var materialName = orderedSpecs
+                    .Select(s => s.Recipe?.Materials?.Name)
+                    .FirstOrDefault() ?? "Материал не указан";
+
+                var totalRemains = specs.Sum(s => (int?)s.Remains) ?? 0;
+
+                return new PurchaseDisplayModel
+                {
+                    Date = p.Date,
+                    Price = p.Price,
+                    Quantity = p.Quantity,
+                    MaterialName = materialName,
+                    Remains = totalRemains
+                };
+            }).ToList();
+
+            Post_list.ItemsSource = displayModels;
+        }
+
+        public class PurchaseDisplayModel
+        {
+            public DateTime Date { get; set; }
+            public decimal Price { get; set; }
+            public int Quantity { get; set; }
+            public string MaterialName { get; set; }
+            public int Remains { get; set; } 
         }
     }
 }
