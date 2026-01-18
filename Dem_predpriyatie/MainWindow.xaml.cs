@@ -26,19 +26,34 @@ namespace Dem_predpriyatie
             InitializeComponent();
         }
 
-        private void MaterialsBtn(object sender, RoutedEventArgs e)
+        private void MaterialsBtn_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new Material_pages());
         }
 
-        private void ProductBtn(object sender, RoutedEventArgs e)
+        private void ProductBtn_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new Product_pages());
         }
 
-        private void PostBtn(object sender, RoutedEventArgs e)
+        private void PostBtn_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new Post_materials());
+        }
+
+        private void StaffBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Staff_pages());
+        }
+
+        private void EquipmentBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Equipment_pages());
+        }
+
+        private void OrdersBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Orders_pages());
         }
     }
 }

@@ -10,10 +10,13 @@
     <Grid>
         <StackPanel Background="Aqua" HorizontalAlignment="Left" Width="250">
             <TextBlock Text="Меню" FontSize="36" FontWeight="Bold" Margin="10" HorizontalAlignment="Center"/>
-            <Button Content="Материалы" FontSize="24" Margin="10" Padding="10" Click="MaterialsBtn"/>
-            <Button Content="Продукция" FontSize="24" Margin="10" Padding="10" Click="ProductBtn"/>
-            <Button Content="Поставки" FontSize="24" Margin="10" Padding="10" Click="PostBtn"/>
+            <Button Content="Материалы" FontSize="24" Margin="10" Padding="10" Click="MaterialsBtn_Click"/>
+            <Button Content="Продукция" FontSize="24" Margin="10" Padding="10" Click="ProductBtn_Click"/>
+            <Button Content="Поставки" FontSize="24" Margin="10" Padding="10" Click="PostBtn_Click"/>
+            <Button Content="Сотрудники" FontSize="24" Margin="10" Padding="10" Click="StaffBtn_Click"/>
+            <Button Content="Оборудование" FontSize="24" Margin="10" Padding="10" Click="EquipmentBtn_Click"/>
+            <Button Content="Заказы" FontSize="24" Margin="10" Padding="10" Click="OrdersBtn_Click"/>
         </StackPanel>
-        <Frame x:Name="MainFrame" Margin="250,0,0,0"/>
+        <Frame x:Name="MainFrame" Margin="250,0,0,0" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

@@ -29,5 +29,13 @@ namespace Dem_predpriyatie.Service.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }
+
+        public string FullName
+        {
+            get
+            {
+                return this.Name + " " + this.Surname + " " + this.Patronymic;
+            }
+        }
     }
 }

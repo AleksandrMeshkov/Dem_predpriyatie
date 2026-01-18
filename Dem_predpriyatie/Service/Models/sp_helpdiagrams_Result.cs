@@ -10,23 +10,13 @@
 namespace Dem_predpriyatie.Service.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Products
+    public partial class sp_helpdiagrams_Result
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Products()
-        {
-            this.Specification = new HashSet<Specification>();
-        }
-    
-        public int Product_id { get; set; }
+        public string Database { get; set; }
         public string Name { get; set; }
-        public decimal Price { get; set; }
-        public string Article { get; set; }
-        public string Description { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Specification> Specification { get; set; }
+        public int ID { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }
