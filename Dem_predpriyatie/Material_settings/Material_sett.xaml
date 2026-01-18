@@ -1,0 +1,41 @@
+﻿<Page x:Class="Dem_predpriyatie.Material_settings.Material_sett"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Dem_predpriyatie.Material_settings"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+     MinHeight="850" MinWidth="1500" Title="Изменение материала" Background="white">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="500">
+            <TextBlock Text="Изменить материал" FontSize="26" FontWeight="Bold" 
+                   HorizontalAlignment="Center" Margin="0,0,0,30"/>
+
+            <TextBlock Text="Название:" FontSize="20"/>
+            <TextBox x:Name="txtName" FontSize="20" Height="35" Margin="0,5,0,20"/>
+
+            <TextBlock Text="Количество:" FontSize="20"/>
+            <TextBox x:Name="txtQuantity" FontSize="20" Height="35" Width="200" 
+                 HorizontalAlignment="Left" Margin="0,5,0,20"/>
+
+            <TextBlock Text="Единица измерения:" FontSize="20"/>
+            <ComboBox x:Name="cmbMeasurement" FontSize="18" Height="35" Width="250" 
+                  HorizontalAlignment="Left" Margin="0,5,0,30"
+                  DisplayMemberPath="Name" SelectedValuePath="Measurement_id"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Изменить" Width="120" Height="40" FontSize="18" 
+                    Background="Aqua" Foreground="Black" Margin="5"
+                    Click="Btn_set_click"/>
+                <Button Content="Очистить" Width="120" Height="40" FontSize="18" 
+                    Background="Aqua" Foreground="Black" Margin="5"
+                    Click="Btn_clear_click"/>
+                <Button Content="Отмена" Width="120" Height="40" FontSize="18" 
+                    Background="Aqua" Foreground="Black" Margin="5"
+                    Click="Btn_close_click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

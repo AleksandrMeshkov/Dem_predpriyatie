@@ -1,0 +1,19 @@
+﻿<Window x:Class="Dem_predpriyatie.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dem_predpriyatie"
+        mc:Ignorable="d"
+        MinHeight="850" MinWidth="1500"
+        Title="Меню" Background="white">
+    <Grid>
+        <StackPanel Background="Aqua" HorizontalAlignment="Left" Width="250">
+            <TextBlock Text="Меню" FontSize="36" FontWeight="Bold" Margin="10" HorizontalAlignment="Center"/>
+            <Button Content="Материалы" FontSize="24" Margin="10" Padding="10" Click="MaterialsBtn"/>
+            <Button Content="Продукция" FontSize="24" Margin="10" Padding="10" Click="ProductBtn"/>
+            <Button Content="Поставки" FontSize="24" Margin="10" Padding="10" Click="PostBtn"/>
+        </StackPanel>
+        <Frame x:Name="MainFrame" Margin="250,0,0,0"/>
+    </Grid>
+</Window>
